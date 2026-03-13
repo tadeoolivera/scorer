@@ -15,10 +15,6 @@ const Home = () => {
               <span className="home-game-icon">🃏</span>
               <h3>Conga</h3>
             </Link>
-            <Link to='/poker' className="home-container-grid-item">
-              <span className="home-game-icon">♠️</span>
-              <h3>Poker</h3>
-            </Link>
           </div>
         </div>
       </div>

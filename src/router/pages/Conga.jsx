@@ -1,4 +1,3 @@
-// Conga.jsx
 import { useState } from "react"
 import "./styles/Conga.css"
 import Scores from "../../components/Scores/Scores"
@@ -12,7 +11,7 @@ const Conga = () => {
   const [limitPoints, setLimitPoints] = useState(null)
   const [limitInput, setLimitInput] = useState("")
   const [eliminated, setEliminated] = useState([])
-  
+
   const addPlayer = () => {
     if (!newPlayer.trim()) return
     const id = Date.now()
