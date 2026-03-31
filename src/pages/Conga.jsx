@@ -1,6 +1,10 @@
 import { useState } from "react"
-import "./styles/Conga.css"
-import Scores from "../../components/Scores/Scores"
+
+import Scores from "../components/Scores.jsx"
+
+import { GiArchiveRegister } from "react-icons/gi";
+import { FaUserPlus } from "react-icons/fa";
+import { FaUsersSlash } from "react-icons/fa";
 
 const Conga = () => {
   const [players, setPlayers] = useState([])
@@ -86,25 +90,20 @@ const Conga = () => {
   return (
     <section className="conga">
       <div className="conga-content">
+        <span>Ronda {round}</span>
 
         <Scores players={playersWithStatus} onRemove={removePlayer} />
 
         <div className="conga-actions">
           <button className="btn-action btn-add" onClick={() => setModal("addPlayer")}>
-            + Jugador
+            <FaUserPlus />
           </button>
-          {eliminated.length > 0 && (
-            <button className="btn-action btn-eliminated" onClick={() => setModal("eliminated")}>
-              Eliminados ({eliminated.length})
+          <button className="btn-action btn-round" onClick={() => setModal("registerRound")} disabled={players.length === 0}>
+            <GiArchiveRegister />
+          </button>
+            <button className="btn-action btn-eliminated" onClick={() => setModal("eliminated")} disabled={eliminated.length === 0}>
+              <FaUsersSlash />
             </button>
-          )}
-          <button
-            className="btn-action btn-round"
-            onClick={() => setModal("registerRound")}
-            disabled={players.length === 0}
-          >
-            Registrar Ronda {round}
-          </button>
         </div>
 
       </div>
@@ -116,7 +115,7 @@ const Conga = () => {
             <div className="add-player-row">
               <input
                 className="input"
-                placeholder="Nombre del jugador"
+                placeholder="Nombre"
                 value={newPlayer}
                 onChange={e => setNewPlayer(e.target.value)}
                 onKeyDown={e => e.key === "Enter" && addPlayer()}
@@ -136,10 +135,12 @@ const Conga = () => {
             <p className="modal-subtitle">Reenganche con {maxPoints} pts (último en tabla)</p>
             {eliminated.map(p => (
               <div key={p.id} className="eliminated-row">
-                <span className="eliminated-name">{p.name}</span>
-                <span className="eliminated-total">{p.total} pts</span>
+                <div className="eliminated-player">
+                  <span className="eliminated-name">{p.name}</span>
+                  <span className="eliminated-total">{p.total} pts</span>
+                </div>
                 <button className="btn-primary" onClick={() => rejoinPlayer(p)}>
-                  Reengancharse
+                  Reenganche
                 </button>
               </div>
             ))}

@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react"
-import "./Scores.css"
+
+import { FaUserMinus } from "react-icons/fa";
 
 const Scores = ({ players, onRemove }) => {
   const cardRef = useRef(null)
@@ -29,9 +30,9 @@ const Scores = ({ players, onRemove }) => {
       <table className="scores-table">
         <thead>
           <tr>
-            <th>Posición</th>
+            <th>Pos</th>
             <th>Jugador</th>
-            <th>Total</th>
+            <th>Puntos</th>
             <th>Acción</th>
           </tr>
         </thead>
@@ -43,13 +44,15 @@ const Scores = ({ players, onRemove }) => {
           ) : (
             sorted.map((p, i) => (
               <tr key={p.id} className={p.eliminated ? "eliminated" : ""}>
-                <td>
+                <td className="position">
                   <span className={`badge ${i === 0 && !p.eliminated ? "first" : ""}`}>{i + 1}</span>
                 </td>
                 <td className="player-name">{p.name}</td>
                 <td>{p.total}</td>
                 <td>
-                  <button className="btn-secondary" onClick={() => onRemove(p.id)}>−</button>
+                  <button className="btn-secondary" onClick={() => onRemove(p.id)}>
+                    <FaUserMinus />
+                  </button>
                 </td>
               </tr>
             ))

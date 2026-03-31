@@ -1,5 +1,10 @@
 import AppRouter from './router/AppRouter.jsx'
+import './App.css'
 
-const App = () => <AppRouter/>
+const App = () => {
+  return (
+    <AppRouter/>
+  )
+}
 
 export default App
