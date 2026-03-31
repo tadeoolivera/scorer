@@ -1,4 +1,4 @@
-/* THIS CSS FILE IS NOT CORRECTLY ORDERER YET (messy code) */
+/* THIS CSS FILE IS NOT CORRECTLY ORDERED YET (messy code) */
 
 /* ======================= PAGES ====================== */
 
@@ -403,10 +403,6 @@
 
 @media (max-width: 600px) {
 
-.conga-content {
-  padding: 12px 0;
-}
-
 .home-content {
   width: 100%;
   padding: 24px 16px;
@@ -418,6 +414,10 @@
 
 .home-container-grid {
   grid-template-columns: repeat(2, 1fr);
+}
+
+.conga-content {
+  padding: 12px 0;
 }
 
 .scores-table th {
@@ -443,14 +443,12 @@
   padding: 12px 0;
 }
 
-
 .eliminated-row {
   display: flex;
   align-items: center;
   gap: 4px;
   padding: 8px 0;
   border-bottom: 1px solid var(--bg-muted);
-  flex-wrap: nowrap;
 }
 
 .eliminated-row .btn-primary {
