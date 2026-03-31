@@ -147,4 +147,4 @@ src/
 
 ## License
 
-No license has been defined yet.
+This project is licensed under the MIT License - see the LICENSE file for details.
