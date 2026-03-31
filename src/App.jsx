@@ -3,7 +3,10 @@ import './App.css'
 
 const App = () => {
   return (
-    <AppRouter/>
+    <div className='main'>
+      <AppRouter/>
+      <span className="app-credit">Desarrollado por <a href="https://github.com/tadeoolivera" target="_blank" rel="noopener noreferrer">Tadeo Olivera</a></span>
+    </div>
   )
 }
 

@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
 
-import { FaPlay } from "react-icons/fa"
-
 const Home = () => {
   const games = [ "Conga" ]
 
