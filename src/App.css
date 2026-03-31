@@ -1,5 +1,80 @@
 /* THIS CSS FILE IS NOT CORRECTLY ORDERER YET (messy code) */
 
+/* ======================= PAGES ====================== */
+
+/* HOME */
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.home-content {
+  padding: 32px 16px;
+  gap: 48px;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.home-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.15em;
+}
+
+.home-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.home-container {
+  width: 100%;
+}
+
+.home-container-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.home-container-grid-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-primary);
+  transition: transform 150ms ease-in-out, background 150ms ease-in-out;
+}
+
+.home-container-grid-item:hover {
+  transform: scale(1.03);
+  background: var(--accent-light);
+}
+
+.home-container-grid-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 /* CONGA */
 .conga {
   width: 100vw;
@@ -209,79 +284,7 @@
   flex: none;
 }
 
-/* HOME */
-.home {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  background: var(--bg);
-}
-
-.home-content {
-  padding: 32px 16px;
-  gap: 48px;
-  height: 100%;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.home-headline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
-}
-
-.home-title {
-  font-size: 4.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: 0.15em;
-}
-
-.home-description {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-}
-
-.home-container {
-  width: 100%;
-}
-
-.home-container-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 24px;
-}
-
-.home-container-grid-item {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 32px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  color: var(--text-primary);
-  transition: transform 150ms ease-in-out, background 150ms ease-in-out;
-}
-
-.home-container-grid-item:hover {
-  transform: scale(1.03);
-  background: var(--accent-light);
-}
-
-.home-container-grid-item h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
+/* ======================= COMPONENTS ====================== */
 
 /* SCORES */
 .scores-card {
@@ -293,26 +296,9 @@
   min-width: 300px;
   width: 100%;
   overflow: hidden;
-  min-height: 80vh;
-  max-height: 80vh;
+  min-height: 70vh;
+  max-height: 70vh;
   overflow-y: auto;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--card);
-  border-left: 1px solid var(--border);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
 }
 
 .scores-table {
@@ -390,7 +376,8 @@
   background: var(--accent-light-hover);
 }
 
-/* RESPONSIVE */
+/* ======================= RESPONSIVE ====================== */
+
 @media (max-width: 600px) {
 
 .conga-content {

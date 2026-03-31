@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react"
 
 import { FaUserMinus } from "react-icons/fa";
 
+
 const Scores = ({ players, onRemove }) => {
   const cardRef = useRef(null)
   const [hasScroll, setHasScroll] = useState(false)

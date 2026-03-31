@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
 
+import { FaPlay } from "react-icons/fa"
+
 const Home = () => {
+  const games = [ "Conga" ]
+
   return (
     <section className="home">
       <div className="home-content">
@@ -10,9 +14,13 @@ const Home = () => {
         </div>
         <div className="home-container">
           <div className="home-container-grid">
-            <Link to='/conga' className="home-container-grid-item">
-              <h3>Conga</h3>
-            </Link>
+            {games.map(g => {
+              return (
+                <Link key={g} to={g.toLowerCase()} className="home-container-grid-item">
+                  <h3>{g}</h3>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>

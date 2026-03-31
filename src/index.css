@@ -7,23 +7,41 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--bg);
 }
 
 :root {
-  --bg:          rgb(255, 238, 219);   /* fondo principal */
-  --bg-muted:    rgb(245, 222, 194);   /* fondo secundario / bordes suaves */
-  --card:        rgb(255, 248, 240);   /* fondo de cards */
-  --border:      rgb(222, 185, 145);   /* bordes */
+  --bg:          rgb(255, 238, 219);        /* main background */
+  --bg-muted:    rgb(245, 222, 194);        /* secondary background / soft borders */
+  --card:        rgb(255, 248, 240);        /* card background */
+  --border:      rgb(222, 185, 145);        /* borders */
 
-  --text-primary:   rgb(80, 50, 20);   /* texto principal */
-  --text-secondary: rgb(141, 99, 52);  /* texto secundario / labels */
-  --text-muted:     rgb(185, 150, 110);/* texto apagado */
+  --text-primary:   rgb(80, 50, 20);        /* primary text */
+  --text-secondary: rgb(141, 99, 52);       /* secondary text / labels */
+  --text-muted:     rgb(185, 150, 110);     /* muted text */
 
-  --accent:         rgb(141, 99, 52);  /* botón primario */
-  --accent-hover:   rgb(115, 78, 35);  /* botón primario hover */
-  --accent-light:   rgb(235, 210, 180);/* botón secundario */
-  --accent-light-hover: rgb(222, 193, 155);
+  --accent:         rgb(141, 99, 52);       /* primary button */
+  --accent-hover:   rgb(115, 78, 35);       /* primary button hover */
+  --accent-light:   rgb(235, 210, 180);     /* secondary button */
+  --accent-light-hover: rgb(222, 193, 155); /* secondary button hover */
 
-  --danger:      rgb(180, 80, 60);     /* eliminado / tachado */
-  --badge-first: rgb(195, 130, 40);    /* medalla #1 */
+  --danger:      rgb(180, 80, 60);          /* eliminated / crossed out */
+  --badge-first: rgb(195, 130, 40);         /* #1 medal */
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card);
+  border-left: 1px solid var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
