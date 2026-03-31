@@ -16,7 +16,7 @@
 }
 
 .app-credit a {
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--text-secondary);
 }
 
