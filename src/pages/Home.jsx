@@ -1,21 +1,34 @@
 import { Link } from 'react-router-dom'
 
 const Home = () => {
-  const games = [ "Conga" ]
+  const games = [
+    {
+      name: 'Conga',
+      img: '/conga.webp'
+    },
+    {
+      name: 'Póker',
+      img: '/póker.jpg'
+    }
+  ]
 
   return (
     <section className="home">
+      <div className="home-header">
+        <h2 className="home-title">Scorer</h2>
+      </div>
       <div className="home-content">
-        <div className="home-headline">
-          <h1 className="home-title">SCORER</h1>
-          <p className="home-description">La aplicación ideal para manejar los puntajes en tus partidas</p>
+        <div className="home-description">
+          <p className="home-dot">Marcador de partidas</p>
+          <h2 className="home-headline">El puntaje, en <span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>tus</span> manos.</h2>
+          <p className="home-description-text">Registrá cada ronda, seguí el historial y sabé siempre quién va ganando. Simple, rápido y sin papel.</p>
         </div>
         <div className="home-container">
           <div className="home-container-grid">
             {games.map(g => {
               return (
-                <Link key={g} to={g.toLowerCase()} className="home-container-grid-item">
-                  <h3>{g}</h3>
+                <Link key={g.name} to={g.name.toLowerCase()} className="home-container-grid-item" style={{ backgroundImage: `linear-gradient(rgba(255, 248, 240, 0.8), rgba(255, 248, 240, 1)), url('${g.img}')` }}>
+                  <h3>{g.name}</h3>
                 </Link>
               )
             })}

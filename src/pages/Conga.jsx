@@ -54,11 +54,6 @@ const Conga = () => {
     setEliminated(prev => prev.filter(p => p.id !== player.id))
   }
 
-  const playersWithStatus = players.map(p => ({
-    ...p,
-    eliminated: false,
-  }))
-
   const confirmLimit = () => {
     const val = parseInt(limitInput)
     if (!val || val <= 0) return
@@ -87,21 +82,38 @@ const Conga = () => {
     )
   }
 
+  const rows = [...players]
+  .map(p => ({
+    id: p.id,
+    name: p.name,
+    total: p.total
+  }))
+  .sort((a, b) => a.total - b.total)
+
+  const columns = [
+    { key: "name", label: "Jugador" },
+    { key: "total", label: "Puntos" }
+  ]
+
   return (
     <section className="conga">
       <div className="conga-content">
         <span>Ronda {round}</span>
 
-        <Scores players={playersWithStatus} onRemove={removePlayer} />
+        <Scores
+          rows={rows}
+          columns={columns}
+          onRemove={removePlayer}
+        />
 
         <div className="conga-actions">
-          <button className="btn-action btn-add" onClick={() => setModal("addPlayer")}>
+          <button className="btn-action btn-add" onClick={() => setModal("addPlayer")} title="Agregar jugador">
             <FaUserPlus />
           </button>
-          <button className="btn-action btn-round" onClick={() => setModal("registerRound")} disabled={players.length === 0}>
+          <button className="btn-action btn-round" onClick={() => setModal("registerRound")} disabled={players.length === 0} title="Registrar ronda">
             <GiArchiveRegister />
           </button>
-            <button className="btn-action btn-eliminated" onClick={() => setModal("eliminated")} disabled={eliminated.length === 0}>
+            <button className="btn-action btn-eliminated" onClick={() => setModal("eliminated")} disabled={eliminated.length === 0} title="Jugadores eliminados">
               <FaUsersSlash />
             </button>
         </div>
