@@ -30,25 +30,23 @@ const Scores = ({
         className="scores-card"
         style={hasScroll ? { borderTopRightRadius: 0, borderBottomRightRadius: 0 } : {}}
       >
-        <table className="scores-table">
-          <thead>
-            <tr>
-              <th>Pos</th>
-              {columns.map(col => (
-                <th key={col.key}>{col.label}</th>
-              ))}
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.length === 0 ? (
+        {data.length === 0 ? (
+          <div className="empty-state">
+            Agrega jugadores para empezar
+          </div>
+        ) : (
+          <table className="scores-table">
+            <thead>
               <tr>
-                <td colSpan={columns.length + 2} className="empty-state">
-                  Agrega jugadores para empezar
-                </td>
+                <th>Pos</th>
+                {columns.map(col => (
+                  <th key={col.key}>{col.label}</th>
+                ))}
+                <th></th>
               </tr>
-            ) : (
-              data.map((row, i) => (
+            </thead>
+            <tbody>
+              {data.map((row, i) => (
                 <tr key={row.id}>
                   <td>
                     <span className={`badge ${i === 0 ? "first" : ""}`}>
@@ -62,16 +60,16 @@ const Scores = ({
                     </td>
                   ))}
 
-                  <td>
+                  <td className="scores-action">
                     <button className="btn-secondary" onClick={() => onRemove(row.id)}>
                       <FaUserMinus />
                     </button>
                   </td>
                 </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     )
   }
@@ -131,7 +129,7 @@ const Scores = ({
                   <td>{p.total}</td>
                 )}
 
-                <td>
+                <td className="scores-action">
                   <button className="btn-secondary" onClick={() => onRemove(p.id)}>
                     <FaUserMinus />
                   </button>
