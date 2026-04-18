@@ -17,15 +17,9 @@
 
 Scorer helps you run matches without paper notes or spreadsheet friction.
 
-Current game mode:
+Current game modes:
 - Conga
-
-What it handles today:
-- Player registration
-- Round point entry
-- Auto-elimination by score limit
-- Rejoin flow for eliminated players
-- Responsive UI for desktop and mobile
+- Poker (WIP)
 
 ---
 
@@ -33,11 +27,7 @@ What it handles today:
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Quick Start](#quick-start)
-- [Scripts](#scripts)
 - [Routes](#routes)
-- [Project Structure](#project-structure)
-- [Conga Rules in App](#conga-rules-in-app)
 - [Roadmap](#roadmap)
 - [License](#license)
 
@@ -66,78 +56,17 @@ What it handles today:
 
 ---
 
-## Quick Start
-
-### Requirements
-
-- Node.js 18+
-- npm 9+
-
-### Install
-
-```bash
-npm install
-```
-
-### Run Development Server
-
-```bash
-npm run dev
-```
-
-Open the local URL shown by Vite (usually `http://localhost:5173`).
-
----
-
-## Scripts
-
-```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run preview  # Preview production build locally
-npm run lint     # Run ESLint
-```
-
----
-
 ## Routes
 
 - `/` -> Home page
 - `/conga` -> Conga scorer page
-
----
-
-## Project Structure
-
-```text
-src/
-	components/
-		Scores.jsx        # Reusable score table component
-	pages/
-		Home.jsx          # Game selector page
-		Conga.jsx         # Conga game logic and UI
-	router/
-		AppRouter.jsx     # Route definitions
-	App.css             # Component/page styles
-	index.css           # Global styles and theme variables
-	main.jsx            # Application entry point
-```
-
----
-
-## Conga Rules in App
-
-1. Set the max score before match start.
-2. Add players.
-3. Register each round's points.
-4. Players at or above max score move to eliminated list.
-5. Eliminated players can rejoin with the highest active score.
+- `/poker` -> Poker scorer page
 
 ---
 
 ## Roadmap
 
-- Add more game modes (for example Poker).
+- Add more game modes.
 - Persist active match state in local storage.
 - Add undo for last round.
 - Export/share match results.
