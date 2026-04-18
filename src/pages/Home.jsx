@@ -7,8 +7,8 @@ const Home = () => {
       img: '/conga.webp'
     },
     {
-      name: 'Póker',
-      img: '/póker.jpg'
+      name: 'Poker',
+      img: '/poker.jpg'
     }
   ]
 
