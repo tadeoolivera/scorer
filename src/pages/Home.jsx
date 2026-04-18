@@ -4,11 +4,13 @@ const Home = () => {
   const games = [
     {
       name: 'Conga',
-      img: '/conga.webp'
+      img: '/conga.webp',
+      wip: false
     },
     {
       name: 'Poker',
-      img: '/poker.jpg'
+      img: '/poker.jpg',
+      wip: true
     }
   ]
 
@@ -28,7 +30,7 @@ const Home = () => {
             {games.map(g => {
               return (
                 <Link key={g.name} to={g.name.toLowerCase()} className="home-container-grid-item" style={{ backgroundImage: `linear-gradient(rgba(255, 248, 240, 0.8), rgba(255, 248, 240, 1)), url('${g.img}')` }}>
-                  <h3>{g.name}</h3>
+                  {g.wip ? <h3>{g.name} (WIP)</h3> : <h3>{g.name}</h3>}
                 </Link>
               )
             })}
